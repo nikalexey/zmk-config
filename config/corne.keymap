@@ -100,10 +100,10 @@
 
         gui {
             bindings = <
-&kp LG(ESC)  &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)    &kp LG(N5)       &kp C_VOL_UP   &kp LC(C_BRI_UP)  &kp LC(EQUAL)              &trans  &kp LC(LA(LG(N1)))  &kp LA(LC(LG(N2)))
-&kp GRAVE    &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)    &kp LG(S)        &kp C_VOL_DN   &kp C_BRI_DEC     &mt RIGHT_SHIFT LC(MINUS)  &trans  &trans              &trans
-&kp LG(R)    &kp LG(V)   &trans      &kp LG(C)   &kp LG(LEFT)  &kp LG(RIGHT)    &trans         &trans            &trans                     &trans  &trans              &kp LA(LC(LG(P)))
-                                     &trans      &kp LG(F)     &trans           &kp LG(ENTER)  &kp LG(T)         &trans
+&kp LG(ESC)    &kp LG(N1)  &kp LG(N2)  &kp LG(N3)     &kp LG(N4)    &kp LG(N5)       &kp C_VOL_UP   &kp LC(C_BRI_UP)  &kp LC(EQUAL)              &trans  &kp LC(LA(LG(N1)))  &kp LA(LC(LG(N2)))
+&kp LG(GRAVE)  &kp LG(N6)  &kp LG(N7)  &kp LG(N8)     &kp LG(N9)    &kp LG(S)        &kp C_VOL_DN   &kp C_BRI_DEC     &mt RIGHT_SHIFT LC(MINUS)  &trans  &trans              &trans
+&kp LG(R)      &kp LG(V)   &trans      &kp LG(C)      &kp LG(LEFT)  &kp LG(RIGHT)    &trans         &trans            &trans                     &trans  &trans              &kp LA(LC(LG(P)))
+                                       &kp LS(LG(F))  &kp LG(F)     &trans           &kp LG(ENTER)  &kp LG(T)         &trans
             >;
         };
 
@@ -118,10 +118,10 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_Y(100)   &mmv MOVE_X(100)  &mmv MOVE_UP    &mmv MOVE_X(-100)  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_Y(-100)  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans             &trans            &trans          &trans             &trans  &trans
-                        &trans  &trans  &trans    &trans             &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK       &mkp RCLK       &mkp MCLK        &trans  &trans
+                        &trans  &trans  &trans    &trans          &trans          &trans
             >;
         };
     };
