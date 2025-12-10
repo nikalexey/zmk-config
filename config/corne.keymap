@@ -75,8 +75,8 @@
 
             bindings = <
 &kp PSCRN   &kp N1        &kp N2        &kp N3          &kp N4         &kp N5           &kp PG_UP  &kp HOME      &kp UP    &kp END        &trans        &kp DELETE
-&trans      &hrm LGUI N6  &hrm LALT N7  &hrm LSHIFT N8  &hrm LCTRL N9  &kp N0           &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &trans        &trans
-&kp INSERT  &trans        &trans        &trans          &kp LC(PG_UP)  &kp LC(PG_DN)    &trans     &kp LC(LEFT)  &trans    &kp LC(RIGHT)  &kp LA(LEFT)  &kp LA(RIGHT)
+&trans      &hrm LGUI N6  &hrm LALT N7  &hrm LSHIFT N8  &hrm LCTRL N9  &kp N0           &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &kp LA(LEFT)  &kp LA(RIGHT)
+&kp INSERT  &trans        &trans        &trans          &kp LC(PG_UP)  &kp LC(PG_DN)    &trans     &kp LC(LEFT)  &trans    &kp LC(RIGHT)  &trans        &trans
                                         &kp LC(D)       &kp LA(F3)     &mo 5            &trans     &trans        &trans
             >;
         };
@@ -91,10 +91,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESC  &kp EXCL  &kp AT  &kp HASH      &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans   &trans    &trans  &trans        &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans   &trans    &trans  &trans        &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                           &kp LC(BSPC)  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&kp ESC      &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp MINUS       &kp PLUS     &kp GRAVE  &kp EXCL           &kp QMARK    &kp CARET  &trans         &trans
+&kp LC(TAB)  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE  &kp EQUAL    &kp HASH   &kp DOLLAR         &kp PERCENT  &kp AMPS   &kp COLON      &kp SEMICOLON
+&trans       &trans  &kp LESS_THAN         &kp GREATER_THAN       &kp LBKT        &kp RBKT     &kp SQT    &kp DOUBLE_QUOTES  &kp COMMA    &kp DOT    &kp LC(SLASH)  &kp BACKSLASH
+                                           &trans                 &trans          &kp AT       &kp TILDE  &kp STAR           &kp FSLH
             >;
         };
 
