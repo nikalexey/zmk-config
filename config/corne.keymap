@@ -175,7 +175,7 @@
         func {
             bindings = <
 &m10_m11  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-&m12      &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &out OUT_BLE  &kp RCTRL     &kp RSHFT     &kp LALT      &kp RGUI      &trans
+&m12_m13  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &out OUT_BLE  &kp RCTRL     &kp RSHFT     &kp LALT      &kp RGUI      &trans
 &trans    &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &out OUT_USB  &trans        &trans        &trans        &trans        &trans
                             &trans   &trans   &trans     &kp LC(X)     &kp LC(C)     &kp LC(V)
             >;
