@@ -73,10 +73,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp PSCRN   &kp N1        &kp N2  &kp N3  &kp N4         &kp N5           &kp PG_UP  &kp HOME      &kp UP    &kp END        &trans        &kp DELETE
-&trans      &kp NUMBER_6  &kp N7  &kp N8  &kp N9         &kp N0           &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &trans        &trans
-&kp INSERT  &trans        &trans  &trans  &kp LC(PG_UP)  &kp LC(PG_DN)    &trans     &kp LC(LEFT)  &trans    &kp LC(RIGHT)  &kp LA(LEFT)  &kp LA(RIGHT)
-                                  &trans  &mo 5          &trans           &trans     &trans        &trans
+&kp PSCRN   &kp N1        &kp N2        &kp N3          &kp N4         &kp N5           &kp PG_UP  &kp HOME      &kp UP    &kp END        &trans        &kp DELETE
+&trans      &hrm LGUI N6  &hrm LALT N7  &hrm LSHIFT N8  &hrm LCTRL N9  &kp N0           &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &trans        &trans
+&kp INSERT  &trans        &trans        &trans          &kp LC(PG_UP)  &kp LC(PG_DN)    &trans     &kp LC(LEFT)  &trans    &kp LC(RIGHT)  &kp LA(LEFT)  &kp LA(RIGHT)
+                                        &kp LC(D)       &kp LA(F3)     &mo 5            &trans     &trans        &trans
             >;
         };
 
