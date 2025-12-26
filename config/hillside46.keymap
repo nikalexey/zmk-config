@@ -127,6 +127,8 @@
 &kp CAPS    &kp Z        &kp X        &kp C          &kp V         &kp B        &kp LBKT           &kp RBKT        &kp N    &kp M         &kp COMMA          &kp DOT      &kp FSLH        &kp RSHIFT
                                       &kp BSPC       &mo 2         &lt 3 SPACE  &kp DELETE         &kp RET         &kp RET  &mo 1         &copy_paste_morph
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
@@ -144,6 +146,8 @@
 &kp INSERT  &trans        &trans        &trans          &kp LC(PG_UP)  &kp LC(PG_DN)  &trans         &trans        &trans     &kp LC(LEFT)  &trans    &kp LC(RIGHT)  &trans        &trans
                                         &kp LC(D)       &kp LA(F3)     &mo 5          &trans         &trans        &trans     &trans        &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         raise_layer {
@@ -161,6 +165,8 @@
 &trans       &trans    &kp LESS_THAN         &kp GREATER_THAN       &kp LBKT        &kp RBKT     &trans         &trans            &kp SQT    &kp DOUBLE_QUOTES  &kp COMMA    &kp DOT    &kp LC(SLASH)  &kp BACKSLASH
                                              &trans                 &trans          &kp AT       &trans         &kp TILDE         &kp STAR   &kp FSLH           &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         gui {
@@ -172,6 +178,8 @@
 &kp LG(R)      &kp LG(V)   &trans      &kp LG(C)      &kp LG(LEFT)  &kp LG(RIGHT)  &trans            &trans           &trans         &trans            &trans                     &trans  &trans              &kp LA(LC(LG(P)))
                                        &kp LS(LG(F))  &kp LG(F)     &trans         &trans            &kp LG(ENTER)    &kp LG(T)      &trans            &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         func {
@@ -183,6 +191,8 @@
 &trans    &kp F11  &kp F12  &kp F13  &kp F14  &kp F15   &trans         &trans        &out OUT_USB  &trans        &trans        &trans        &trans        &trans
                             &trans   &trans   &trans    &trans         &kp LC(X)     &kp LC(C)     &kp LC(V)     &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         mouse {
@@ -194,6 +204,8 @@
 &trans  &trans  &trans  &trans     &trans     &trans     &trans         &trans             &trans          &mkp LCLK       &mkp RCLK       &mkp MCLK        &trans  &trans
                         &trans     &trans     &trans     &trans         &trans             &trans          &trans          &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };

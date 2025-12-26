@@ -1,0 +1,12 @@
+file_format: "1"
+id: hillside46
+name: Hillside46
+type: shield
+url: https://github.com/m-reiner/hillside46_zmk_with_dongle/
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - hillside46_dongle
+  - hillside46_left
+  - hillside46_right
