@@ -1,0 +1,199 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
+
+/ {
+    behaviors {
+        hrm: hrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+        };
+
+        copy_paste_morph: copy_paste_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COPY_PASTE_MORPH";
+            bindings = <&kp LC(C)>, <&kp LC(V)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        m10_m11: m10_m11 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M10_M11";
+            bindings = <&m10>, <&m11>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        m12_m13: m12_m13 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M12_M13";
+            bindings = <&m12>, <&m13>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        lbkt {
+            bindings = <&kp LBKT>;
+            key-positions = <32 33>;
+        };
+
+        rbkt {
+            bindings = <&kp RBKT>;
+            key-positions = <34 35>;
+        };
+    };
+
+    macros {
+        m10: m10 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp M &kp N1 &kp N0>;
+            label = "M10";
+        };
+
+        m11: m11 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp M &kp N1 &kp N1>;
+            label = "M11";
+        };
+
+        m12: m13 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp M &kp N1 &kp N2>;
+            label = "M13";
+        };
+
+        m13: m14 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp M &kp N1 &kp N3>;
+            label = "M14";
+        };
+
+        m_grave: m_aster {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp GRAVE &kp GRAVE &kp GRAVE>,
+                <&macro_wait_time 10>,
+                <&kp RET &kp RET>,
+                <&macro_wait_time 10>,
+                <&kp GRAVE &kp GRAVE &kp GRAVE>,
+                <&macro_wait_time 10>,
+                <&kp UP>;
+
+            label = "M_ASTER";
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "Default Layer";
+
+            // -----------------------------------------------------------------------------------------
+            // |  ESC |  Q  |  W  |  E  |  R  |  T  |                  |  Y  |  U   |  I  |  O  |  P  | BSPC |
+            // |  TAB |  A  |  S  |  D  |  F  |  G  |                  |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | CAPS |  Z  |  X  |  C  |  V  |  B  | LBRC  |  |  RBRC |  N  |  M   |  ,  |  .  |  /  | SHFT |
+            //                    | BSPC | LWR | SPC | DEL   |  |  RET  | ENT | RSE  | CPY |
+
+            bindings = <
+&kp ESCAPE  &kp Q        &kp W        &kp E          &kp R         &kp T                                           &kp Y    &kp U         &kp I              &kp O        &kp P           &kp BSLH
+&kp TAB     &hrm LGUI A  &hrm LALT S  &hrm LSHIFT D  &hrm LCTRL F  &kp G                                           &kp H    &hrm RCTRL J  &hrm RSHIFT K      &hrm LALT L  &hrm RGUI SEMI  &lt 4 SQT
+&kp CAPS    &kp Z        &kp X        &kp C          &kp V         &kp B        &kp LBKT           &kp RBKT        &kp N    &kp M         &kp COMMA          &kp DOT      &kp FSLH        &kp RSHIFT
+                                      &kp BSPC       &mo 2         &lt 3 SPACE  &kp DELETE         &kp RET         &kp RET  &mo 1         &copy_paste_morph
+            >;
+        };
+
+        lower_layer {
+            display-name = "Lower Layer";
+
+            // -----------------------------------------------------------------------------------------
+            // | PSCRN |  1  |  2  |  3  |  4  |  5  |                  | PGUP | HOME |  UP  | END  |     | DEL  |
+            // | TRANS |  6  |  7  |  8  |  9  |  0  |                  | PGDN | LEFT | DOWN | RGT  | ALT←| ALT→ |
+            // | INS   |     |     |     | C-PU| C-PD|       |  |       |      | C-← |      | C-→  |     |      |
+            //                     | C-D | AF3 | MO5 |       |  |       |      |     |      |
+
+            bindings = <
+&kp PSCRN   &kp N1        &kp N2        &kp N3          &kp N4         &kp N5                                       &kp PG_UP  &kp HOME      &kp UP    &kp END        &trans        &kp DELETE
+&trans      &hrm LGUI N6  &hrm LALT N7  &hrm LSHIFT N8  &hrm LCTRL N9  &kp N0                                       &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &kp LA(LEFT)  &kp LA(RIGHT)
+&kp INSERT  &trans        &trans        &trans          &kp LC(PG_UP)  &kp LC(PG_DN)  &trans         &trans        &trans     &kp LC(LEFT)  &trans    &kp LC(RIGHT)  &trans        &trans
+                                        &kp LC(D)       &kp LA(F3)     &mo 5          &trans         &trans        &trans     &trans        &trans
+            >;
+        };
+
+        raise_layer {
+            display-name = "Raise Layer";
+
+            // -----------------------------------------------------------------------------------------
+            // |  ESC |  `  |  {  |  }  |  -  |  +  |                  |  `  |  !  |  ?  |  ^  |     |     |
+            // | C-TAB|     |  (  |  )  |  _  |  =  |                  |  #  |  $  |  %  |  &  |  :  |  ;  |
+            // | TRANS|     |  <  |  >  |  [  |  ]  |       |  |       |  '  |  "  |  ,  |  .  | C-/ |  \  |
+            //                    |     |     |  @  |       |  |  ~    |  *  |  /  |
+
+            bindings = <
+&kp ESC      &m_grave  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp MINUS       &kp PLUS                                       &kp GRAVE  &kp EXCL           &kp QMARK    &kp CARET  &trans         &trans
+&kp LC(TAB)  &trans    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE  &kp EQUAL                                      &kp HASH   &kp DOLLAR         &kp PERCENT  &kp AMPS   &kp COLON      &kp SEMICOLON
+&trans       &trans    &kp LESS_THAN         &kp GREATER_THAN       &kp LBKT        &kp RBKT     &trans         &trans            &kp SQT    &kp DOUBLE_QUOTES  &kp COMMA    &kp DOT    &kp LC(SLASH)  &kp BACKSLASH
+                                             &trans                 &trans          &kp AT       &trans         &kp TILDE         &kp STAR   &kp FSLH           &trans
+            >;
+        };
+
+        gui {
+            display-name = "GUI Layer";
+
+            bindings = <
+&kp LG(ESC)    &kp LG(N1)  &kp LG(N2)  &kp LG(N3)     &kp LG(N4)    &kp LG(N5)                                          &kp C_VOL_UP   &kp LC(C_BRI_UP)  &kp LC(EQUAL)              &trans  &kp LC(LA(LG(N1)))  &kp LA(LC(LG(N2)))
+&kp LG(GRAVE)  &kp LG(N6)  &kp LG(N7)  &kp LG(N8)     &kp LG(N9)    &kp LG(S)                                           &kp C_VOL_DN   &kp C_BRI_DEC     &mt RIGHT_SHIFT LC(MINUS)  &trans  &trans              &trans
+&kp LG(R)      &kp LG(V)   &trans      &kp LG(C)      &kp LG(LEFT)  &kp LG(RIGHT)  &trans            &trans           &trans         &trans            &trans                     &trans  &trans              &kp LA(LC(LG(P)))
+                                       &kp LS(LG(F))  &kp LG(F)     &trans         &trans            &kp LG(ENTER)    &kp LG(T)      &trans            &trans
+            >;
+        };
+
+        func {
+            display-name = "Function Layer";
+
+            bindings = <
+&m10_m11  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
+&m12_m13  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10                                &out OUT_BLE  &kp RCTRL     &kp RSHFT     &kp LALT      &kp RGUI      &trans
+&trans    &kp F11  &kp F12  &kp F13  &kp F14  &kp F15   &trans         &trans        &out OUT_USB  &trans        &trans        &trans        &trans        &trans
+                            &trans   &trans   &trans    &trans         &kp LC(X)     &kp LC(C)     &kp LC(V)     &trans
+            >;
+        };
+
+        mouse {
+            display-name = "Mouse Layer";
+
+            bindings = <
+&trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &mkp MCLK                                     &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans                                        &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans     &trans         &trans             &trans          &mkp LCLK       &mkp RCLK       &mkp MCLK        &trans  &trans
+                        &trans     &trans     &trans     &trans         &trans             &trans          &trans          &trans
+            >;
+        };
+    };
+};
